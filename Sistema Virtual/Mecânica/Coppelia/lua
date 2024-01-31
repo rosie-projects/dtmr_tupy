@@ -1,0 +1,42 @@
+function sysCall_init() 
+    
+    motorLeftFront=sim.getObjectHandle("/Left_Front_Motor")
+    motorLeftRear=sim.getObjectHandle("/Left_Rear_Motor")
+    
+    motorRightFront=sim.getObjectHandle("/Right_Front_Motor")
+    motorRightRear=sim.getObjectHandle("/Right_Rear_Motor")
+    
+    if simROS then
+         sim.addLog(sim.verbosity_scriptinfos,"ROS interface was found.")
+         
+         sub=simROS.subscribe('/cmd_vel', 'geometry_msgs/Twist', 'Message_callback')
+         simROS.subscriberTreatUInt8ArrayAsString(sub)
+         
+    end
+    
+end
+
+function sysCall_actuation() 
+        d= 0.320/2
+        vl=0
+        vc=0
+        
+    function Message_callback(vel)
+        vl = vel.linear.x - d*vel.angular.z
+        vr = vel.linear.x + d*vel.angular.z
+        
+        sim.setJointTargetVelocity(motorLeftFront,4*vl)
+        sim.setJointTargetVelocity(motorLeftRear,4*vl)
+        
+        sim.setJointTargetVelocity(motorRightFront,4*vr)
+        sim.setJointTargetVelocity(motorRightRear,4*vr)        
+        print(vel.linear.x)
+    end
+end 
+
+function sysCall_cleanup() 
+ if simROS then   
+        -- Shut down publisher and subscriber. Not really needed from a simulation script (automatic shutdown)
+        simROS.shutdownSubscriber(sub)
+    end
+end 

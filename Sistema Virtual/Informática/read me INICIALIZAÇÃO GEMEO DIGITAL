@@ -1,0 +1,57 @@
+########### DESKTOP
+
+roscore
+
+########### TUPY
+
+ssh tupy@192.168.15.22
+
+export ROS_MASTER_URI=http://192.168.15.21:11311
+export ROS_IP=192.168.15.22
+roslaunch freenect_launch freenect.launch depth_registration:=true
+
+############ TUPY
+
+ssh tupy@192.168.15.22
+
+export ROS_MASTER_URI=http://192.168.15.21:11311
+export ROS_IP=192.168.15.22
+rosrun rosserial_python serial_node.py /dev/ttyACM0
+
+############ SONARES DESKTOP
+
+export ROS_MASTER_URI=http://192.168.15.21:11311
+export ROS_IP=192.168.15.21
+rostopic echo /sonar1
+
+export ROS_MASTER_URI=http://192.168.15.21:11311
+export ROS_IP=192.168.15.21
+rostopic echo /sonar2
+
+export ROS_MASTER_URI=http://192.168.15.21:11311
+export ROS_IP=192.168.15.21
+rostopic echo /sonar3
+
+export ROS_MASTER_URI=http://192.168.15.21:11311
+export ROS_IP=192.168.15.21
+rostopic echo /sonar4
+
+############ CANNY DESKTOP phyton (csf_robotCS_cannyKinect.py)
+
+export ROS_MASTER_URI=http://192.168.15.21:11311
+export ROS_IP=192.168.15.21
+rosrun img_processor csf_robotCS_cannyKinect.py
+
+############ TELEOP DESKTOP
+
+export ROS_MASTER_URI=http://192.168.15.21:11311    
+export ROS_IP=192.168.15.21
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+### COPPELIA DESKTOP
+
+export ROS_MASTER_URI=http://192.168.15.21:11311
+export ROS_IP=192.168.15.21
+coppelia
+
+
