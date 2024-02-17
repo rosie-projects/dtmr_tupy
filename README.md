@@ -6,7 +6,7 @@ Validação do conceito Gêmeo Digital na Robótica Móvel - Digital Twin Mobile
 
 Resumo:
 
-Este projeto, derivado da pesquisa acadêmica proposta por Magrin, Del Conte e Todt (2021) \cite{dtmr2021}, tem como objetivo virtualizar o robô Tupy com a finalidade de aprender sistemas ciberfísicos e aplicar conceitos da Indústria 4.0. Utilizando o Sistema Operacional do Robô (ROS) como componente crucial, o projeto Tupy, desenvolvido pelo grupo ROSIE da Universidade de Curitiba (Unicuritiba), serve de base devido à sua capacidade de integração com as plataformas Raspberry Pi (RPi) e Arduino por meio de a estrutura ROS. A implementação bem-sucedida de um Gêmeo Digital de Robô Móvel (DTMR) inclui conquistas como troca de informações entre distintas plataformas de desenvolvimento, integração perfeita do ROS ao robô móvel Tupy e operação e visualização eficazes do robô no simulador robótico CoppeliaSim - EDU.
+Este projeto, derivado da pesquisa acadêmica proposta por Magrin, Del Conte e Todt (2021), tem como objetivo virtualizar o robô Tupy com a finalidade de aprender sistemas ciberfísicos e aplicar conceitos da Indústria 4.0. Utilizando o Sistema Operacional do Robô (ROS) como componente crucial, o projeto Tupy, desenvolvido pelo grupo ROSIE da Universidade de Curitiba (Unicuritiba), serve de base devido à sua capacidade de integração com as plataformas Raspberry Pi (RPi) e Arduino por meio de a estrutura ROS. A implementação bem-sucedida de um Gêmeo Digital de Robô Móvel (DTMR) inclui conquistas como troca de informações entre distintas plataformas de desenvolvimento, integração perfeita do ROS ao robô móvel Tupy e operação e visualização eficazes do robô no simulador robótico CoppeliaSim - EDU.
 
 Abstract:
 
