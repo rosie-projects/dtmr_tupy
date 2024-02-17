@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="TUPY_robot URDF">
+  <link
+    name="base_carcass">
+    <inertial>
+      <origin
+        xyz="-0.14668 -0.01106 0.09999"
+        rpy="0 0 0" />
+      <mass
+        value="2.8746" />
+      <inertia
+        ixx="0.013467"
+        ixy="0.00031755"
+        ixz="-5.3991E-07"
+        iyy="0.0089719"
+        iyz="-1.7413E-06"
+        izz="0.021032" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/base_carcass.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.99608 1 0.25" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/base_carcass.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="axle_rigthTwo">
+    <inertial>
+      <origin
+        xyz="-0.00018799 0.0088767 1.1698E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0035509" />
+      <inertia
+        ixx="2.6264E-07"
+        ixy="-3.9231E-09"
+        ixz="-1.2039E-14"
+        iyy="1.3617E-07"
+        iyz="5.9883E-14"
+        izz="2.5787E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/axle_rigthTwo.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.82745 0.69804 0.4902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/axle_rigthTwo.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="juntafixa_rightTwo"
+    type="continuous">
+    <origin
+      xyz="-0.29968 0.031907 0.028763"
+      rpy="-1.5708 -1.5051 3.1416" />
+    <parent
+      link="base_carcass" />
+    <child
+      link="axle_rigthTwo" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel_rigthTwo">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-18 0.00999999999999995 -6.93889390390723E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0753025621898532" />
+      <inertia
+        ixx="2.60707981283911E-05"
+        ixy="-1.58818677610181E-21"
+        ixz="5.44568391080873E-21"
+        iyy="4.71214254441252E-05"
+        iyz="-1.19753476178835E-21"
+        izz="2.60707981283911E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/wheel_rigthTwo.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.92156862745098 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/wheel_rigthTwo.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_rigthTwo"
+    type="continuous">
+    <origin
+      xyz="0 0.006 0"
+      rpy="0 0 0" />
+    <parent
+      link="axle_rigthTwo" />
+    <child
+      link="wheel_rigthTwo" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="axle_rightOne">
+    <inertial>
+      <origin
+        xyz="-0.000187986899861048 0.00887668851051193 1.16978847441995E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00355089540142316" />
+      <inertia
+        ixx="2.62643550118823E-07"
+        ixy="-3.92307174745113E-09"
+        ixz="-1.2038789338577E-14"
+        iyy="1.36166552158685E-07"
+        iyz="5.98834840242136E-14"
+        izz="2.57871390213882E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/axle_rightOne.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.827450980392157 0.698039215686274 0.490196078431373 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/axle_rightOne.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Juntafixa_rightOne"
+    type="continuous">
+    <origin
+      xyz="-0.29312 0.031907 -0.071022"
+      rpy="-1.5708 -1.5051 3.1416" />
+    <parent
+      link="base_carcass" />
+    <child
+      link="axle_rightOne" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel_rightOne">
+    <inertial>
+      <origin
+        xyz="6.93889390390723E-18 0.01 -6.93889390390723E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0753025621898531" />
+      <inertia
+        ixx="2.60707981283911E-05"
+        ixy="-1.56701095242046E-20"
+        ixz="4.61997068123316E-21"
+        iyy="4.71214254441253E-05"
+        iyz="-1.27647524162121E-21"
+        izz="2.60707981283911E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/wheel_rightOne.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.92156862745098 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/wheel_rightOne.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_rigthOne"
+    type="continuous">
+    <origin
+      xyz="0 0.006 0"
+      rpy="0 0 0" />
+    <parent
+      link="axle_rightOne" />
+    <child
+      link="wheel_rightOne" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="axle_leftOne">
+    <inertial>
+      <origin
+        xyz="-0.000187986899861027 0.00887668851051204 1.16978846748106E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00355089540142315" />
+      <inertia
+        ixx="2.62643550118823E-07"
+        ixy="-3.92307174745121E-09"
+        ixz="-1.20387893202669E-14"
+        iyy="1.36166552158685E-07"
+        iyz="5.98834839624651E-14"
+        izz="2.57871390213882E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/axle_leftOne.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.827450980392157 0.698039215686274 0.490196078431373 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/axle_leftOne.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Juntafixa__leftOne"
+    type="continuous">
+    <origin
+      xyz="0.0062351 0.031907 -0.051336"
+      rpy="1.5708 1.5051 0" />
+    <parent
+      link="base_carcass" />
+    <child
+      link="axle_leftOne" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel_leftOne">
+    <inertial>
+      <origin
+        xyz="0 0.01 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0753025621898532" />
+      <inertia
+        ixx="2.60707981283911E-05"
+        ixy="7.41153828847513E-22"
+        ixz="3.17344577869304E-21"
+        iyy="4.71214254441253E-05"
+        iyz="-3.91666605311065E-22"
+        izz="2.60707981283911E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/wheel_leftOne.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.92156862745098 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/wheel_leftOne.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_leftOne"
+    type="continuous">
+    <origin
+      xyz="0 0.026 0"
+      rpy="0 0 -3.1416" />
+    <parent
+      link="axle_leftOne" />
+    <child
+      link="wheel_leftOne" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="axle_leftTwo">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/axle_leftTwo.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/axle_leftTwo.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Juntafixa_leftTwo"
+    type="continuous">
+    <origin
+      xyz="-0.00032692 0.031907 0.048449"
+      rpy="1.5708 1.5051 0" />
+    <parent
+      link="base_carcass" />
+    <child
+      link="axle_leftTwo" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel_leftTwo">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-18 0.01 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0753025621898532" />
+      <inertia
+        ixx="2.60707981283911E-05"
+        ixy="7.41153828847513E-22"
+        ixz="3.16706475095729E-21"
+        iyy="4.71214254441253E-05"
+        iyz="-4.71045482546984E-22"
+        izz="2.60707981283911E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/wheel_leftTwo.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.92156862745098 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TUPY_robot URDF/meshes/wheel_leftTwo.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_leftTwo"
+    type="continuous">
+    <origin
+      xyz="0 0.026 0"
+      rpy="0 0 3.1416" />
+    <parent
+      link="axle_leftTwo" />
+    <child
+      link="wheel_leftTwo" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

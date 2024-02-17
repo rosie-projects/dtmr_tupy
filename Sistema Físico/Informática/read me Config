@@ -1,0 +1,175 @@
+#Comunicando Arduíno e Raspberry via Protocolo I2C
+
+https://www.arduinoecia.com.br/comunicacao-arduino-raspberry-pi-usando-i2c/
+sudo apt-get install i2c-tools
+sudo apt-get install python-smbus
+
+ls -l /dev/ttyACM*
+sudo usermod -a -G dialout tupy
+sudo chmod a+rw /dev/ttyACM0
+rosrun rosserial_python serial_node.py /dev/ttyACM0
+
+i2cdetect -y 1
+sudo nano comunicai2c.py
+sudo python3 comunicai2c.py
+
+#Instalando SSH - okrpi pc
+
+https://www.edivaldobrito.com.br/como-ativar-ssh-no-ubuntu-e-acessa-lo-remotamente/
+sudo apt-get install openssh-server
+sudo service ssh start
+ssh tupy@192.168.15.22
+
+#Instalando Terminator ok
+
+https://www.edivaldobrito.com.br/emulador-de-terminal-terminator-no-ubuntu/
+
+#Instalando ROS-MELODIC-DESKTOP-FULL ok
+
+http://wiki.ros.org/melodic/Installation/Ubuntu
+sudo apt install ros-melodic-desktop-full
+
+#Criando Workspace catkin_ws ok
+http://wiki.ros.org/catkin/Tutorials/create_a_workspace
+
+#Instalando pacotes Kinect no Raspberry Pi 
+
+libfreenect drivers - freenect_stack package for ROS
+https://www.hackster.io/dmitrywat/rgb-d-slam-with-kinect-on-raspberry-pi-4-ros-melodic-ace795
+
+#Terminal Tupy - RPi
+export ROS_MASTER_URI=http://192.168.15.21:11311
+export ROS_IP=192.168.15.22
+roslaunch freenect_launch freenect.launch depth_registration:=true
+
+roslaunch freenect_launch freenect.launch depth_registration:=true data_skip:=2
+
+#Terminal Desktop
+
+export ROS_MASTER_URI=http://192.168.15.21:11311    
+export ROS_IP=192.168.15.22
+rviz
+
+export ROS_MASTER_URI=http://192.168.15.22:11311    
+export ROS_IP=192.168.15.21
+rviz
+
+#Visualizando Imagem Kinect Desktop 
+
+export ROS_MASTER_URI=http://192.168.15.21:11311    
+export ROS_IP=192.168.15.21
+roslaunch openni_launch openni.launch  
+coppelia
+
+rosrun image_view image_view image:=/camera/rgb/image_color
+
+
+#Visualizando Imagem Kinect RPi
+
+https://robotics.stackexchange.com/questions/2173/visualizing-kinect-data-on-rviz
+rosrun image_view image_view image:=/camera/depth/image
+rviz
+
+
+
+
+#Instalando Arduino IDE - arduino-1.8.19-linux64
+
+https://docs.arduino.cc/software/ide-v1/tutorials/Linux
+sudo sh install.sh
+ls -l /dev/ttyACM*
+sudo usermod -a -G dialout jean
+sudo chmod a+rw /dev/ttyACM0
+
+
+#Instalando Pacote ROSSERIAL-ARDUINO via terminal
+
+http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
+
+
+#Instalando Biblioteca rosserial (caso necessário)
+
+Gerenciador de Bibliotecas IDE Arduino - Rosserial Arduino Library 0.7.9
+
+	sudo apt-get install ros-melodic-rosserial
+
+  cd <ws>/src
+  git clone https://github.com/ros-drivers/rosserial.git
+  cd <ws>
+  catkin_make
+  catkin_make install
+
+#Instalando CoppeliaSIM - CoppeliaSim_Edu_V4_3_0_rev12_Ubuntu18_04
+
+echo 'export COPPELIASIM_ROOT_DIR="$HOME/CoppeliaSim_Edu_V4_3_0_rev12_Ubuntu18_04"' >> ~/.bashrc && source ~/.bashrc
+
+git clone https://github.com/VRI-UFPR/dtmr.git
+
+
+#Instalando teleop_twist_keyboard
+
+http://wiki.ros.org/teleop_twist_keyboard
+
+sudo apt-get install ros-melodic-teleop-twist-keyboard
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+#Executando ros serial node
+
+#Configurando USB para comunicação Rosserial-Arduino
+
+ls -l /dev/ttyACM*
+sudo usermod -a -G dialout tupy
+sudo chmod a+rw /dev/ttyACM0
+
+rosrun rosserial_python serial_node.py /dev/ttyACM0
+
+rostopic echo /sonar
+
+
+wget https://github.com/VRI-UFPR/dtmr/blob/main/Computer%20Science/ROS/csf_robotCS_cannyKinect.py
+
+#instalar 
+sudo apt-get install python3-pip
+sudo apt install python-pip
+pip3 install opencv-python
+
+Create pakcage
+cd ~/catkin_ws/src
+catkin_create_pkg img_processor std_msgs rospy
+
+cd ~/catkin_ws/src/img_processor/src
+
+wget https://github.com/VRI-UFPR/dtmr/blob/main/Computer%20Science/ROS/csf_robotCS_cannyKinect.py
+csf_robotCS_cannyKinect.py
+
+source ~/catkin_ws/devel/setup.bash
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+
+roscd img_processor
+
+cd ~/catkin_ws
+catkin_make
+
+rosrun img_processor csf_robotCS_cannyKinect.py
+phyton csf_robotCS_cannyKinect.py
+
+ssh -X -C tupy@192.168.15.22
+
+http://wiki.ros.org/ROS/Tutorials/CreatingPackage
+
+cd ~/catkin_ws/src
+catkin_create_pkg teleop std_msgs rospy roscpp
+
+rosrun teleop csf_robotCS_teleop
+
+cd ~/catkin_ws
+catkin_make
+
+. ~/catkin_ws/devel/setup.bash
+
+############ rviz
+export ROS_MASTER_URI=http://192.168.15.21:11311
+export ROS_IP=192.168.15.21
+rviz
+
+
